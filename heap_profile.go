@@ -5,4 +5,4 @@ import (
 	"net/http/pprof"
 )
 
-var HeapProfile http.Handler = pprof.Handler("heap")
+var HeapProfile http.HandlerFunc = pprof.Handler("heap").ServeHTTP

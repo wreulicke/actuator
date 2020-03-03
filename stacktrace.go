@@ -5,4 +5,4 @@ import (
 	"net/http/pprof"
 )
 
-var StackTrace http.Handler = pprof.Handler("goroutine")
+var StackTrace http.HandlerFunc = pprof.Handler("goroutine").ServeHTTP

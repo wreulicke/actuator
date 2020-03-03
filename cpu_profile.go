@@ -5,4 +5,4 @@ import (
 	"net/http/pprof"
 )
 
-var CpuProfile http.Handler = http.HandlerFunc(pprof.Profile)
+var CpuProfile http.HandlerFunc = http.HandlerFunc(pprof.Profile).ServeHTTP
