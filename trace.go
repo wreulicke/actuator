@@ -2,12 +2,7 @@ package actuator
 
 import (
 	"net/http"
-	"runtime/trace"
-	"time"
+	"net/http/pprof"
 )
 
-func Trace(w http.ResponseWriter, req *http.Request) {
-	trace.Start(w)
-	time.Sleep(5 * time.Second)
-	trace.Stop()
-}
+var Trace http.HandlerFunc = pprof.Trace

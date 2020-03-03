@@ -2,9 +2,7 @@ package actuator
 
 import (
 	"net/http"
-	"runtime/pprof"
+	"net/http/pprof"
 )
 
-func HeapProfile(w http.ResponseWriter, req *http.Request) {
-	pprof.WriteHeapProfile(w)
-}
+var HeapProfile http.Handler = pprof.Handler("heap")
